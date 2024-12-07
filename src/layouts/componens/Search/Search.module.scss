@@ -1,0 +1,89 @@
+.search {
+    width: 410px;
+}
+.search-result {
+    width: 430px;
+    position: relative;
+    left: -2px;
+}
+.search {
+    position: relative;
+    height: 36px;
+    background-color: rgb(238 238 239);
+    border-radius: var(--search-boder-radius);
+    padding-left: 16px;
+    display: flex;
+    border: 1.5px solid transparent;
+
+    //Đây là kiểu css lồng nhau để thể hiện rõ cấu trúc css cho thẻ con
+    input {
+        flex: 1;
+        color: var(--black);
+        font-size: 1.1rem;
+        background-color: transparent;
+        height: 100%;
+        border: none;
+        outline: none;
+    }
+    &::after {
+        left: 367px;
+        position: absolute;
+        content: '';
+        width: 1px;
+        top: 7.5px;
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        background-color: rgb(22, 24, 35, 0.12);
+    }
+
+    &::focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
+}
+
+.search-tittle {
+    padding-left: 12px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    color: rgb(161, 161, 168);
+}
+
+.clear,
+.loading {
+    border: none;
+    outline: none;
+    position: absolute;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    color: rgb(167, 167, 170);
+}
+.loading {
+    animation: spin 1.5s linear infinite; /* Hiệu ứng quay */
+}
+
+/* Hiệu ứng quay */
+@keyframes spin {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+.clear {
+    top: 10px;
+}
+.search-btn {
+    width: var(--search-button-width);
+    border-top-right-radius: var(--search-boder-radius);
+    border-bottom-right-radius: var(--search-boder-radius);
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: rgb(22, 24, 35, 0.12);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(217, 217, 218);
+    }
+}
